@@ -2,12 +2,11 @@ const yesButton = document.getElementById("yes");
 const noButton = document.getElementById("no");
 
 const noPrompts = [
-    "Are you sure? :(",
-    "Really sure? ;-;",
-    "Don't break my heart! ;-;",
-    "Think again... >_<",
-    "You might regret this... :(",
-    "But I like you... :'>",
+    "Think again... ;-;",
+    "Are you really sure? :(",
+    "Please don't do this... :'>",
+    "But I like you... :<",
+    "You're breaking my heart! ;-;",
     "Last chance!",
     "You can't escape love ❤️"
 ];
@@ -15,16 +14,16 @@ const noPrompts = [
 let noClickCount = 0;
 
 noButton.addEventListener("click", function () {
-    // Cycle through the prompts infinitely
+    // Change the "No" button text
     noButton.innerText = noPrompts[noClickCount % noPrompts.length];
     
-    // Increase the size of the Yes button
+    // Make the "Yes" button bigger
     yesButton.style.transform = `scale(${1 + noClickCount * 0.2})`;
     
     noClickCount++;
 });
 
 yesButton.addEventListener("click", function () {
-    noButton.innerText = "Too late now! ❤️";
-    yesButton.innerText = "Yay! (✿◕‿◕)";
+    // Redirect to the romantic page
+    window.location.href = "yes.html";
 });
