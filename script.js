@@ -1,26 +1,27 @@
-let yesButton = document.getElementById("yes");
-let noButton = document.getElementById("no");
-let message = document.getElementById("message");
+const yesButton = document.getElementById("yes");
+const noButton = document.getElementById("no");
+const message = document.getElementById("message");
 
-const noMessages = [
-    "Are you sure? :(",
-    "Think again... ;-;",
-    "Don't break my heart! ;-;",
-    "Last chance... >_<"
+const noPrompts = [
+  "Are you sure? :(",
+  "Really sure?",
+  "Do you really mean no?",
+  "Don't you feel it?"
 ];
 
 let noClickCount = 0;
 
 noButton.addEventListener("click", function () {
-    if (noClickCount < noMessages.length) {
-        message.innerText = noMessages[noClickCount];
-    } else {
-        message.innerText = "You can't escape love ❤️";
-    }
-    noClickCount++;
-    yesButton.style.transform = `scale(${1 + noClickCount * 0.2})`;
+  if (noClickCount < noPrompts.length) {
+    noButton.innerText = noPrompts[noClickCount];
+  } else {
+    noButton.innerText = "Can't say no to love!";
+  }
+  noClickCount++;
+  // Make the Yes button bigger each time No is clicked
+  yesButton.style.transform = `scale(${1 + noClickCount * 0.2})`;
 });
 
 yesButton.addEventListener("click", function () {
-    message.innerText = "Yay! I’m so happy! (✿◕‿◕)";
+  message.innerText = "Yay! I’m so happy! (✿◕‿◕)";
 });
