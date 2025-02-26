@@ -3,69 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ML Partner?</title>
-  <style>
-    body {
-      background-color: pink;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-    button {
-      font-size: 20px;
-      padding: 10px 20px;
-      margin: 10px;
-      cursor: pointer;
-    }
-    #gif-container {
-      display: none;
-    }
-    #initial-gif {
-      display: none;
-    }
-  </style>
+  <title>My Love ❤️</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Will you be my ML Partner?</h1>
-  <button id="yes-btn">Yes</button>
-  <button id="no-btn">No</button>
-
-  <div id="no-response" style="display: none;">
-    <p>:-(</p>
-    <p>Oh no, maybe next time!</p>
+  <div class="container">
+    <h1>Aww I knew it MY LOVEEE Muahhh ❤️</h1>
+    <p>You finally admitted it! Now you're mine forever (✿◕‿◕)</p>
+    <img id="loveGif" src="your-gif.gif" alt="Cute GIF" class="gif" onclick="changeGif()">
   </div>
-
-  <!-- Initially hidden GIF that will be replaced -->
-  <div id="initial-gif">
-    <img src="your-gif.gif" alt="Cute GIF">
-  </div>
-
-  <div id="gif-container">
-    <h2>Aww I knew it MY LOVEEE Muahhh</h2>
-    <!-- New GIF that will appear after clicking "Yes" -->
-    <img id="your-gif" src="our-gif.gif" alt="Cute GIF">
-  </div>
-
   <script>
-    document.getElementById('yes-btn').onclick = function() {
-      // Hide 'No' response and show the new GIF container
-      document.getElementById('no-response').style.display = 'none';
-      document.getElementById('gif-container').style.display = 'block';
-      document.getElementById('initial-gif').style.display = 'none'; // Hide initial GIF
-
-      // Debugging: check if new GIF is loading
-      var gif = document.getElementById('your-gif');
-      gif.onload = function() {
-        console.log('New GIF loaded successfully!');
-      };
-      gif.onerror = function() {
-        console.log('Error loading new GIF. Please check the file path.');
-      };
-    };
-
-    document.getElementById('no-btn').onclick = function() {
-      // Show 'No' response
-      document.getElementById('no-response').style.display = 'block';
-    };
+    function changeGif() {
+      document.getElementById("loveGif").src = "another-romantic-gif.gif";
+    }
   </script>
 </body>
 </html>
